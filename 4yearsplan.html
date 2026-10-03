@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>4 Year Tech Career Roadmap</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #050816;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 8, 22, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1d2745;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4facfe;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #4facfe;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 8%;
+            background:
+                radial-gradient(circle at top, #102a56, transparent 45%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #4facfe;
+        }
+
+        .hero p {
+            color: #b9c2d0;
+            font-size: 20px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #4facfe;
+            color: #06101f;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+        }
+
+        /* GENERAL */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #9ca7ba;
+        }
+
+        /* ROADMAP */
+        .roadmap {
+            max-width: 1100px;
+            margin: auto;
+            position: relative;
+        }
+
+        .roadmap::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: #263a61;
+            transform: translateX(-50%);
+        }
+
+        .year {
+            width: 50%;
+            padding: 20px 45px;
+            position: relative;
+        }
+
+        .year:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .year:nth-child(even) {
+            left: 50%;
+        }
+
+        .year-card {
+            background: #0c1327;
+            border: 1px solid #243454;
+            padding: 30px;
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .year-card:hover {
+            transform: translateY(-7px);
+            border-color: #4facfe;
+        }
+
+        .year-card h3 {
+            color: #4facfe;
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .year-card h4 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .year-card ul {
+            list-style: none;
+            color: #b7c0d1;
+        }
+
+        .year-card li {
+            margin: 8px 0;
+        }
+
+        .year-card li::before {
+            content: "✓ ";
+            color: #4facfe;
+            font-weight: bold;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .skill-box {
+            background: #0c1327;
+            border: 1px solid #243454;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-8px);
+            border-color: #4facfe;
+        }
+
+        .skill-box .number {
+            font-size: 35px;
+            color: #4facfe;
+            font-weight: bold;
+        }
+
+        .skill-box h3 {
+            margin: 10px 0;
+        }
+
+        .skill-box p {
+            color: #9ca7ba;
+        }
+
+        /* SPECIALIZATION */
+        .specializations {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .specialization {
+            padding: 25px;
+            background: #0c1327;
+            border-radius: 15px;
+            border: 1px solid #243454;
+        }
+
+        .specialization h3 {
+            color: #4facfe;
+            margin-bottom: 8px;
+        }
+
+        .specialization p {
+            color: #aab4c7;
+        }
+
+        /* GOAL */
+        .goal {
+            text-align: center;
+            background: linear-gradient(135deg, #0b1730, #07101f);
+            border-top: 1px solid #1d2d4d;
+            border-bottom: 1px solid #1d2d4d;
+        }
+
+        .goal h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .goal p {
+            max-width: 750px;
+            margin: auto;
+            color: #aeb8ca;
+            font-size: 18px;
+        }
+
+        .goal-line {
+            margin-top: 35px;
+            font-size: 22px;
+            color: #4facfe;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 35px;
+            color: #78849a;
+            border-top: 1px solid #1c2942;
+        }
+
+        footer strong {
+            color: #4facfe;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            nav div:last-child {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .roadmap::before {
+                left: 10px;
+            }
+
+            .year,
+            .year:nth-child(even),
+            .year:nth-child(odd) {
+                width: 100%;
+                left: 0;
+                text-align: left;
+                padding-left: 35px;
+                padding-right: 0;
+            }
+
+            .skills {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .specializations {
+                grid-template-columns: 1fr;
+            }
+
+            .goal h2 {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">ABHISHEK TECH</div>
+
+        <div>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#skills">Skills</a>
+            <a href="#career">Career</a>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                4-Year Roadmap to a
+                <span>High-Package Tech Career</span>
+            </h1>
+
+            <p>
+                Learn the fundamentals, master problem solving,
+                build real-world projects, gain experience and become
+                completely job ready.
+            </p>
+
+            <a href="#roadmap" class="btn">
+                Explore Roadmap →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ROADMAP -->
+    <section id="roadmap">
+
+        <div class="section-title">
+
+            <h2>4-Year Roadmap</h2>
+
+            <p>
+                One step at a time. Four years. One strong career.
+            </p>
+
+        </div>
+
+
+        <div class="roadmap">
+
+            <!-- YEAR 1 -->
+            <div class="year">
+
+                <div class="year-card">
+
+                    <h3>YEAR 01</h3>
+
+                    <h4>Foundation & Communication</h4>
+
+                    <ul>
+                        <li>Computer Science Fundamentals</li>
+                        <li>Programming Basics</li>
+                        <li>C / C++ Fundamentals</li>
+                        <li>HTML, CSS & JavaScript</li>
+                        <li>Git & GitHub</li>
+                        <li>English Communication</li>
+                        <li>Logical Thinking</li>
+                        <li>Beginner Projects</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- YEAR 2 -->
+            <div class="year">
+
+                <div class="year-card">
+
+                    <h3>YEAR 02</h3>
+
+                    <h4>Problem Solving</h4>
+
+                    <ul>
+                        <li>Choose One Programming Language</li>
+                        <li>Data Structures & Algorithms</li>
+                        <li>300–500+ Coding Problems</li>
+                        <li>Object Oriented Programming</li>
+                        <li>DBMS & SQL</li>
+                        <li>Coding Contests</li>
+                        <li>Problem Solving Techniques</li>
+                        <li>Intermediate Projects</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- YEAR 3 -->
+            <div class="year">
+
+                <div class="year-card">
+
+                    <h3>YEAR 03</h3>
+
+                    <h4>Projects & Internship</h4>
+
+                    <ul>
+                        <li>Choose a Tech Specialization</li>
+                        <li>Build 3–5 Strong Projects</li>
+                        <li>APIs & Databases</li>
+                        <li>Deployment</li>
+                        <li>Strong GitHub Profile</li>
+                        <li>Resume Building</li>
+                        <li>LinkedIn Profile</li>
+                        <li>Internship Experience</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- YEAR 4 -->
+            <div class="year">
+
+                <div class="year-card">
+
+                    <h3>YEAR 04</h3>
+
+                    <h4>Job Ready & Interviews</h4>
+
+                    <ul>
+                        <li>Advanced DSA Revision</li>
+                        <li>Operating Systems</li>
+                        <li>Computer Networks</li>
+                        <li>DBMS Revision</li>
+                        <li>System Design Basics</li>
+                        <li>Mock Interviews</li>
+                        <li>Technical Interviews</li>
+                        <li>HR Interview Preparation</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>What You Build Over 4 Years</h2>
+
+            <p>Your growth from beginner to job-ready developer.</p>
+
+        </div>
+
+
+        <div class="skills">
+
+            <div class="skill-box">
+
+                <div class="number">01</div>
+
+                <h3>Learn</h3>
+
+                <p>
+                    Build strong fundamentals and communication skills.
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <div class="number">02</div>
+
+                <h3>Solve</h3>
+
+                <p>
+                    Master DSA and develop strong problem-solving ability.
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <div class="number">03</div>
+
+                <h3>Build</h3>
+
+                <p>
+                    Create real-world projects and gain internship experience.
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <div class="number">04</div>
+
+                <h3>Get Hired</h3>
+
+                <p>
+                    Prepare for technical and HR interviews.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SPECIALIZATIONS -->
+    <section id="career">
+
+        <div class="section-title">
+
+            <h2>Choose Your Specialization</h2>
+
+            <p>Explore different technology career paths.</p>
+
+        </div>
+
+
+        <div class="specializations">
+
+            <div class="specialization">
+
+                <h3>☁️ Cloud Computing</h3>
+
+                <p>
+                    Learn cloud platforms, networking,
+                    Linux, DevOps and deployment.
+                </p>
+
+            </div>
+
+
+            <div class="specialization">
+
+                <h3>💻 Web Development</h3>
+
+                <p>
+                    Master frontend, backend, databases,
+                    APIs and full-stack development.
+                </p>
+
+            </div>
+
+
+            <div class="specialization">
+
+                <h3>🤖 AI / ML</h3>
+
+                <p>
+                    Learn Python, data science,
+                    machine learning and AI systems.
+                </p>
+
+            </div>
+
+
+            <div class="specialization">
+
+                <h3>🔐 Cybersecurity</h3>
+
+                <p>
+                    Explore networking, security,
+                    ethical hacking and system protection.
+                </p>
+
+            </div>
+
+
+            <div class="specialization">
+
+                <h3>📊 Data Science</h3>
+
+                <p>
+                    Learn statistics, Python,
+                    SQL, visualization and analytics.
+                </p>
+
+            </div>
+
+
+            <div class="specialization">
+
+                <h3>📱 App Development</h3>
+
+                <p>
+                    Build Android, iOS or cross-platform
+                    mobile applications.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL GOAL -->
+    <section class="goal">
+
+        <h2>Your 4-Year Journey</h2>
+
+        <p>
+            Don't focus only on the package.
+            Focus on becoming highly skilled, building real experience,
+            solving difficult problems and becoming valuable to the industry.
+        </p>
+
+        <div class="goal-line">
+            Learn → Solve → Build → Intern → Interview → Career
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <strong>Abhishek Tech</strong> |
+            4-Year Tech Career Roadmap
+        </p>
+
+    </footer>
+
+</body>
+</html>
